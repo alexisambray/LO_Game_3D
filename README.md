@@ -5,8 +5,8 @@
 
 - The game will focus on:
   - **Core Mechanics:** Players will examine different substances, categorize them based on their appearance, and determine if they are homogeneous or heterogeneous. The game features several tools (such as a microscope, centrifuge, and flashlight) to analyze these mixtures.
-  - **Objectives:** Players must complete challenges by identifying the correct mixture categories, using the tools provided, and testing samples within the game environment. Completing objectives will unlock new mixtures and equipment to use in later levels.
+  - **Objectives:** Players must complete challenges by identifying the correct mixture categories, using the tools provided, and testing samples within the game environment. Completing objectives will unlock items on inventory, finishing the game. 
 
 ## Learning Outcome
 - The lower-order-learning-outcome (LOLO) of this game is:
-  - To describe the use and appearance of homogeneous and heterogeneous mixtures, helping players understand these fundamental concepts in chemistry through hands-on experience and gameplay.
+  - To describe the use and appearance of homogeneous and heterogeneous mixtures, helping players understand these fundamental concepts in Science through hands-on experience and gameplay.
