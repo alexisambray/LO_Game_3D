@@ -62,6 +62,8 @@
   <ItemGroup>
     <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\ItemPotion.cs" />
+    <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\Movement.cs" />
     <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
