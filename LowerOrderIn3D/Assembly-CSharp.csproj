@@ -60,10 +60,18 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\ItemController.cs" />
     <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\ObjectPool.cs" />
+    <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\Movement Controller.cs" />
     <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\ItemPotion.cs" />
+    <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\ItemSpawner.cs" />
+    <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\TouchManager.cs" />
+    <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\SavePlayerPosition.cs" />
     <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\ItemPickup.cs" />
     <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\Movement.cs" />
+    <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\LoadPlayerPosition.cs" />
     <Compile Include="Assets\3D Laboratory Environment with Appratus\Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>

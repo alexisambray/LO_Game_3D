@@ -353,10 +353,18 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.48f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.48f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/3D Laboratory Environment with Appratus/Scripts/GameManager.cs"
+"Assets/3D Laboratory Environment with Appratus/Scripts/InventoryManager.cs"
+"Assets/3D Laboratory Environment with Appratus/Scripts/ItemController.cs"
+"Assets/3D Laboratory Environment with Appratus/Scripts/ItemPickup.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/ItemPotion.cs"
+"Assets/3D Laboratory Environment with Appratus/Scripts/ItemSpawner.cs"
+"Assets/3D Laboratory Environment with Appratus/Scripts/LoadPlayerPosition.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/MouseLook.cs"
+"Assets/3D Laboratory Environment with Appratus/Scripts/Movement Controller.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/Movement.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/ObjectPool.cs"
+"Assets/3D Laboratory Environment with Appratus/Scripts/SavePlayerPosition.cs"
+"Assets/3D Laboratory Environment with Appratus/Scripts/TouchManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+
