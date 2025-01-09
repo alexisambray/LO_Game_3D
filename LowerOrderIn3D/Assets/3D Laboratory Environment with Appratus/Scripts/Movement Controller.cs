@@ -36,6 +36,10 @@ public class MovementController : MonoBehaviour
     public float groundCheckRadius;
     private bool grounded;
 
+    [Header("Touch Interaction")]
+    public LayerMask interactableLayer;
+    public float raycastDistance = 2f; 
+
     private void Start()
     {
         cameraTransform.eulerAngles = new Vector3(-5f, cameraTransform.eulerAngles.y, cameraTransform.eulerAngles.z);
@@ -135,6 +139,16 @@ public class MovementController : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public bool IsTap(Touch touch)
+    {
+        float tapThreshold = 50f;
+        float tapDuration = 0.2f;
+
+        return touch.phase == TouchPhase.Ended &&
+               touch.deltaPosition.magnitude > tapThreshold &&
+               touch.deltaTime < tapDuration;
     }
 
     public void Jump()
