@@ -364,6 +364,7 @@
 "Assets/3D Laboratory Environment with Appratus/Scripts/Movement Controller.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/Movement.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/ObjectPool.cs"
+"Assets/3D Laboratory Environment with Appratus/Scripts/OutlineController.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/PickupSystem.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/PlayerInteract.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/PlayerInteractUI.cs"
