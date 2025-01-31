@@ -41,18 +41,18 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        //if (Input.GetMouseButton(0))
+        //{
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //    RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider.gameObject.CompareTag("Shelf"))
-                {
-                    Debug.Log("Clicked on: " + hit.collider.gameObject.name);
-                }
-            }
-        }
+        //    if (Physics.Raycast(ray, out hit))
+        //    {
+        //        if (hit.collider.gameObject.CompareTag("Shelf"))
+        //        {
+        //            Debug.Log("Clicked on: " + hit.collider.gameObject.name);
+        //        }
+        //    }
+        //}
     }
 }

@@ -1,11 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class OutlineController : MonoBehaviour
 {
     public Transform player;
-    public Material outlineMaterial;
-    private Renderer objectRenderer;
+    private Outline outline;
     private float pulseSpeed = 0.5f;
     private float maxWidth = 5f;
     private float minWidth = 2f;
@@ -15,7 +13,7 @@ public class OutlineController : MonoBehaviour
 
     void Start()
     {
-        objectRenderer = GetComponent<Renderer>();
+        outline = GetComponent<Outline>();
     }
 
     void Update()
@@ -33,15 +31,14 @@ public class OutlineController : MonoBehaviour
 
             pulseTimer += Time.deltaTime * pulseSpeed;
             float newWidth = Mathf.Lerp(minWidth, maxWidth, Mathf.PingPong(pulseTimer, 1));
-            outlineMaterial.SetFloat("_OutlineWidth", newWidth);
-
+            outline.OutlineWidth = newWidth;
         }
         else
         {
             if (isPulsing)
             {
                 isPulsing = false;
-                outlineMaterial.SetFloat("_OutlineWidth", farDistanceWidth);
+                outline.OutlineWidth = farDistanceWidth;
             }
         }
     }
