@@ -23,21 +23,23 @@ public class ItemPotion : MonoBehaviour
             if (shelfChecker != null)
             {
                 // Log positions and scales for debugging
-                Debug.Log($"Potion Scale Before: {this.transform.localScale}");
-                Debug.Log($"Shelf Scale: {shelfChecker.transform.localScale}");
+                // Debug.Log($"Potion Scale Before: {this.transform.localScale}");
+                // Debug.Log($"Shelf Scale: {shelfChecker.transform.localScale}");
 
                 // Snap to the shelf's position and rotation
                 this.transform.position = shelfChecker.transform.position;
                 this.transform.rotation = shelfChecker.transform.rotation;
 
-                Debug.Log($"Potion Scale Restored: {this.transform.localScale}");
-                Debug.Log($"Potion Final Position: {this.transform.position}");
+                // Debug.Log($"Potion Scale Restored: {this.transform.localScale}");
+                // Debug.Log($"Potion Final Position: {this.transform.position}");
 
                 Rigidbody rigidBody = this.transform.GetComponent<Rigidbody>();
                 rigidBody.isKinematic = true;
             }
                 else
                 {
+                    //remove potion from shelf slot
+                    //TODO: add remove logic for potion
                     Debug.Log("Potion does not match the shelf.");
                 }
             
