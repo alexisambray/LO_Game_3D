@@ -7,6 +7,7 @@ TagManager:
   - Potion
   - Shelf
   - Tool
+  - Mixture
   layers:
   - Default
   - TransparentFX

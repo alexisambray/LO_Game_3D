@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,7 +13,15 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text dayText;
     [SerializeField] private int dayCounter = 0;
-    
+
+    public GameObject mixture;
+
+    public Transform mixtureSlot1, mixtureSlot2, mixtureSlot3;
+
+    public int mixtureGenerated = 0;
+    public Transform player;
+
+    public Camera playerCamera;
 
     private void Awake()
     {
@@ -25,10 +34,33 @@ public class GameManager : MonoBehaviour
         StartDay();
     }
 
+    public void InstantiatePrefab(){
+        GameObject mixture1 = Instantiate(mixture, mixtureSlot1);
+        GameObject mixture2 = Instantiate(mixture, mixtureSlot2);
+        GameObject mixture3 = Instantiate(mixture, mixtureSlot3);
+
+        mixture1.transform.localPosition = Vector3.zero;
+        mixture2.transform.localPosition = Vector3.zero;
+        mixture3.transform.localPosition = Vector3.zero;
+
+        OutlineController Pref1 = mixture1.GetComponentInChildren<OutlineController>(false);
+        Pref1.player = player;
+
+        OutlineController Pref2 = mixture1.GetComponentInChildren<OutlineController>(false);
+        Pref2.player = player;
+
+        OutlineController Pref3 = mixture1.GetComponentInChildren<OutlineController>(false);
+        Pref3.player = player;
+    }   
+
     public void StartDay()
     {
         dayCounter++;
         UpdateDayUI();
+
+        InstantiatePrefab();
+
+
     }
 
     private void UpdateDayUI()
@@ -41,18 +73,36 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetMouseButton(0))
-        //{
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //    RaycastHit hit;
+        if (Input.GetMouseButtonDown(0))
+        {
+           //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+           Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+           RaycastHit hit;
 
-        //    if (Physics.Raycast(ray, out hit))
-        //    {
-        //        if (hit.collider.gameObject.CompareTag("Shelf"))
-        //        {
-        //            Debug.Log("Clicked on: " + hit.collider.gameObject.name);
-        //        }
-        //    }
-        //}
+           if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+           {
+            Debug.Log("Hit" + hit.collider.gameObject.name);
+               if (hit.collider.gameObject.CompareTag("Mixture"))
+               {
+
+                   //if unopened, open the box and make it go away
+                   Animator animator = hit.collider.gameObject.GetComponentInChildren<Animator>(false);
+                   if(animator.GetBool("isClicked") == false){ animator.SetBool("isClicked", true); }
+                   else //remove box
+                   { 
+
+                    GameObject box = hit.collider.gameObject;   //transform.Find("Mixture(Clone)/Cardboard Box");
+                    if(box.transform.Find("Cardboard Box"))
+                    {
+                        //Transform childBox = box.transform.Find("Cardboard Box");
+                        box.transform.GetChild(1).gameObject.SetActive(false);
+                        //box.SetActive(false);
+                    }
+                   }
+                    
+
+               }
+           }
+        }
     }
 }
