@@ -8,6 +8,7 @@ TagManager:
   - Shelf
   - Tool
   - Mixture
+  - Box
   layers:
   - Default
   - TransparentFX
