@@ -133,6 +133,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" />
     <Compile Include="Assets/3D Laboratory Environment with Appratus/Scripts/MouseLook.cs" />
     <Compile Include="Assets/LeanTween/Testing/TestingSceneSwitching.cs" />
+    <Compile Include="Assets/3D Laboratory Environment with Appratus/Scripts/ObjectGrabbable.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" />
     <Compile Include="Assets/LeanTween/Testing/Testing246.cs" />
     <Compile Include="Assets/3D Laboratory Environment with Appratus/Scripts/ItemPickup.cs" />
@@ -160,6 +161,7 @@
     <Compile Include="Assets/LeanTween/Testing/TestingMaxTweens.cs" />
     <Compile Include="Assets/LeanTween/Testing/TestingIssue.cs" />
     <Compile Include="Assets/LeanTween/Examples/Scripts/GeneralUISpace.cs" />
+    <Compile Include="Assets/3D Laboratory Environment with Appratus/Scripts/PlayerPickUpDrop.cs" />
     <Compile Include="Assets/LeanTween/Testing/FollowingTests.cs" />
     <Compile Include="Assets/3D Laboratory Environment with Appratus/Scripts/LoadPlayerPosition.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />

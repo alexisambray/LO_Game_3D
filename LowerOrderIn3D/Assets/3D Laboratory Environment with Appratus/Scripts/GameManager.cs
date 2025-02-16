@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
 
     public Camera playerCamera;
 
+    private ObjectGrabbable objectGrabbable;
+    [SerializeField] private LayerMask pickUpLayerMask;
+    [SerializeField] private Transform objectGrabPointTransform;
+
     private void Awake()
     {
         Instance = this;
@@ -78,13 +82,13 @@ public class GameManager : MonoBehaviour
            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
            RaycastHit hit;
-
-           if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+           float pickUpDistance = 2f;
+           if (Physics.Raycast(ray, out hit, pickUpDistance))
            {
             Debug.Log("Hit" + hit.collider.gameObject.name);
                if (hit.collider.gameObject.CompareTag("Mixture"))
                {
-
+                    if(hit.collider.gameObject.transform.GetChild(1).gameObject.activeSelf == true){
                    //if unopened, open the box and make it go away
                    Animator animator = hit.collider.gameObject.GetComponentInChildren<Animator>(false);
                    if(animator.GetBool("isClicked") == false){ animator.SetBool("isClicked", true); }
@@ -99,8 +103,19 @@ public class GameManager : MonoBehaviour
                         //box.SetActive(false);
                     }
                    }
-                    
+                    }
 
+                   else{
+                        if(objectGrabbable == null){
+                            if(hit.transform.TryGetComponent(out objectGrabbable)){
+                                objectGrabbable.Grab(objectGrabPointTransform);
+                            }
+                        }
+                        // else{
+                        //     objectGrabbable.Drop();
+                        //     objectGrabbable = null;
+                        // }
+                   }
                }
            }
         }
