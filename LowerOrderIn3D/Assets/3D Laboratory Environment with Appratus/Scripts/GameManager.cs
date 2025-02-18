@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,10 +28,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LayerMask pickUpLayerMask;
     [SerializeField] private Transform objectGrabPointTransform;
 
+    [SerializeField] private GameObject DropUIButton;
+    private Button dropButton;
+
     private void Awake()
     {
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        dropButton = DropUIButton.GetComponent<Button>();     
     }
 
     private void Start()
@@ -80,7 +86,6 @@ public class GameManager : MonoBehaviour
     {
         dayCounter++;
         UpdateDayUI();
-
         InstantiatePrefab();
 
 
@@ -101,9 +106,10 @@ public class GameManager : MonoBehaviour
            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
            RaycastHit hit;
-           float pickUpDistance = 2f;
+           float pickUpDistance = 100f;
            if (Physics.Raycast(ray, out hit, pickUpDistance))
            {
+            //Debug.DrawRay(objectGrabPointTransform.position, objectGrabPointTransform.forward, Color.green);
             Debug.Log("Hit" + hit.collider.gameObject.name);
                if (hit.collider.gameObject.CompareTag("Box"))
                {
@@ -130,11 +136,25 @@ public class GameManager : MonoBehaviour
                    {
                         if(objectGrabbable == null){
                             if(hit.transform.TryGetComponent(out objectGrabbable)){
-                                // Rigidbody rb = gameObject.AddComponent<Rigidbody>();
-                                // rb.drag = 5;
-                                // rb.mass = 1f;
-                                // rb.useGravity = true;
+                                DropUIButton.SetActive(true);
                                 objectGrabbable.Grab(objectGrabPointTransform);
+
+                                
+                                dropButton.onClick.RemoveAllListeners();
+                                dropButton.onClick.AddListener(() => 
+                                {
+                                    if(objectGrabbable != null)
+                                    {
+                                        objectGrabbable.Drop();
+                                        objectGrabbable = null;
+                                        DropUIButton.SetActive(false);
+                                    }
+                                });
+                                
+
+                            //     button.onClick.RemoveAllListeners();
+                            //     ObjectGrabbable currentObject = objectGrabbable; // Capture the exact object
+                            //     button.onClick.AddListener(() => currentObject.Drop()); // Assign the correct object's Drop()
                             }
                         }
                         // else{

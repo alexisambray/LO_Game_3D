@@ -13,7 +13,8 @@ public class ObjectGrabbable : MonoBehaviour
     private void Awake()
     {
      objectRigidbody = GetComponent<Rigidbody>();   
-
+    //  if(objectRigidbody == null) { Debug.Log("This is empty"); }
+    //  else { Debug.Log("rigidbody cool"); }
     }
 
     public void Grab(Transform objectGrabPointTransform){
@@ -23,8 +24,11 @@ public class ObjectGrabbable : MonoBehaviour
     }
 
     public void Drop(){
+        Debug.Log(gameObject.name + " is dropping!");
         this.objectGrabPointTransform = null;
-        objectRigidbody.useGravity = true;
+
+        if(objectRigidbody == null) { Debug.Log("It's empty again"); }
+        else objectRigidbody.useGravity = true;
     }
 
     private void FixedUpdate()

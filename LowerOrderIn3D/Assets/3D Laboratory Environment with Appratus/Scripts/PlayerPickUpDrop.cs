@@ -19,39 +19,30 @@ public class PlayerPickUpDrop : MonoBehaviour
 
     private void Start()
     {
-         button = DropUIButton.GetComponent<Button>();
+        button = DropUIButton.GetComponent<Button>();
         if(button != null)
         {
-            button.onClick.AddListener(() => objectGrabbable.Drop());
+            button.onClick.AddListener(() => DropHeldObject());
         }
     }
     private void Update()
     {
-     if(Input.GetMouseButtonDown(0)){
-        float pickUpDistance = 2f;
-        if(objectGrabbable == null){
-            if(Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpDistance)){
-                if(raycastHit.transform.TryGetComponent(out objectGrabbable)){
-                    objectGrabbable.Grab(objectGrabPointTransform);
-                    DropUIButton.SetActive(true);
+    //  if(Input.GetMouseButtonDown(0)){
+    //     float pickUpDistance = 2f;
+    //     if(objectGrabbable == null){
+    //         //pickup
+    //         if(Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpDistance)){
+    //             if(raycastHit.transform.TryGetComponent(out objectGrabbable)){
+    //                 objectGrabbable.Grab(objectGrabPointTransform);
+    //             }
+    //         }
+    //     }
+    //     // else{
+    //     //     objectGrabbable.Drop();
+    //     //     objectGrabbable = null;
+    //     // }
 
-                    // button = DropUIButton.GetComponent<Button>();
-                    // button.onClick.RemoveAllListeners();
-
-                    // button.onClick.AddListener(() => objectGrabbable.Drop());
-                    button.onClick.RemoveAllListeners();
-                    ObjectGrabbable currentObject = objectGrabbable; // Capture the exact object
-                    button.onClick.AddListener(() => currentObject.Drop()); // Assign the correct object's Drop()
-                }
-            }
-        }
-        // else{
-        //     objectGrabbable.Drop();
-        //     objectGrabbable = null;
-        //     DropUIButton.SetActive(false);
-        // }
-
-     }   
+    //  }   
     }
 
     public void DropHeldObject()
