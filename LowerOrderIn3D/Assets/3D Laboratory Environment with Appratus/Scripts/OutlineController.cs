@@ -5,7 +5,7 @@ public class OutlineController : MonoBehaviour
     public Transform player;
     private Outline outline;
     private float pulseSpeed = 0.5f;
-    private float maxWidth = 5f;
+    private float maxWidth = 7f;
     private float minWidth = 2f;
     private float farDistanceWidth = 1.5f;
     private bool isPulsing = false;
@@ -14,6 +14,10 @@ public class OutlineController : MonoBehaviour
     void Start()
     {
         outline = GetComponent<Outline>();
+        if(player == null)
+        {
+            player = GameObject.Find("Player").transform;
+        }
     }
 
     void Update()
@@ -40,6 +44,19 @@ public class OutlineController : MonoBehaviour
                 isPulsing = false;
                 outline.OutlineWidth = farDistanceWidth;
             }
+        }
+    }
+
+    void ToggleOutline(ObjectGrabbable objectGrabbable)
+    {
+        //only enable outline when player picks up the object
+        if(objectGrabbable == null)
+        {
+            outline.enabled = false;
+        }
+        else
+        {
+            outline.enabled = true;
         }
     }
 }

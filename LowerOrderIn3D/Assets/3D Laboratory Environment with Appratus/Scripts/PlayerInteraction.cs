@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float raycastRange = 5f;
+    public float raycastRange = 3f;
     public LayerMask interactableLayer;
     public Transform holdPoint;
     public Image interactionIcon; // Assign UI Image in Inspector

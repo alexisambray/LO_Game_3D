@@ -20,4 +20,12 @@ public class ObjectPool : MonoBehaviour
         PersonalHygiene,
         Agriculture
     }
+
+    public enum WorkTools
+    {
+        Flashlight,
+        Centrifuge,
+        Microscope,
+        Observe
+    }
 }

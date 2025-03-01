@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -72,14 +73,7 @@ public class GameManager : MonoBehaviour
         mixture3.transform.localPosition = Vector3.zero;
         mixture3.transform.localRotation = Quaternion.identity;
 
-        // OutlineController Pref1 = mixture1.GetComponentInChildren<OutlineController>(false);
-        // Pref1.player = player;
-
-        // OutlineController Pref2 = mixture1.GetComponentInChildren<OutlineController>(false);
-        // Pref2.player = player;
-
-        // OutlineController Pref3 = mixture1.GetComponentInChildren<OutlineController>(false);
-        // Pref3.player = player;
+        
     }   
 
     public void StartDay()
@@ -106,11 +100,11 @@ public class GameManager : MonoBehaviour
            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
            RaycastHit hit;
-           float pickUpDistance = 100f;
+           float pickUpDistance = 4f;
            if (Physics.Raycast(ray, out hit, pickUpDistance))
            {
-            //Debug.DrawRay(objectGrabPointTransform.position, objectGrabPointTransform.forward, Color.green);
-            Debug.Log("Hit" + hit.collider.gameObject.name);
+            //Debug.DrawRay(player.position, player.forward * 10000f, Color.green);
+            Debug.Log("Hit " + hit.collider.gameObject.name + " with " + hit.collider.gameObject.tag);
                if (hit.collider.gameObject.CompareTag("Box"))
                {
                     if(hit.collider.gameObject.transform.GetChild(1).gameObject.activeSelf == true)
@@ -135,7 +129,8 @@ public class GameManager : MonoBehaviour
                    else if(hit.collider.gameObject.CompareTag("Mixture"))
                    {
                         if(objectGrabbable == null){
-                            if(hit.transform.TryGetComponent(out objectGrabbable)){
+                            ItemPotion itemPotion = hit.transform.GetComponent<ItemPotion>();
+                            if(hit.transform.TryGetComponent(out objectGrabbable) && itemPotion.interactable){
                                 DropUIButton.SetActive(true);
                                 objectGrabbable.Grab(objectGrabPointTransform);
 
@@ -168,7 +163,73 @@ public class GameManager : MonoBehaviour
                         if(objectGrabbable != null)
                         {
                             //TODO: Run ItemPotion method of checking if item is correctly placed.
+                            ItemPotion selectedShelf = hit.collider.gameObject.GetComponent<ItemPotion>();
+                            Transform parentTransform = objectGrabbable.transform;
+                            ItemPotion parentMixture = parentTransform.GetComponent<ItemPotion>();
+
+                                objectGrabbable.Drop();
+                                objectGrabbable = null;
+                                DropUIButton.SetActive(false);
+                                parentTransform.position = selectedShelf.transform.position;
+
                         }
+                   }
+
+                   else if (hit.collider.gameObject.CompareTag("Tool"))
+                   {
+                    ToolInteraction selectedTool = hit.collider.gameObject.GetComponent<ToolInteraction>();
+                    //if player has an mixture on hand and the workstation is not full
+                    if(objectGrabbable != null && !selectedTool.isFull)
+                    {
+                        Transform parentTransform = objectGrabbable.transform;
+                        ItemPotion parentMixture = parentTransform.GetComponent<ItemPotion>();
+                        //set UI elements
+                        objectGrabbable.transform.parent = null;
+
+                        GameObject slot = hit.collider.gameObject;
+                        
+                        // Transform slot = transform.Find("Tool Slot");
+                        objectGrabbable.transform.SetParent(slot.transform, false);
+                        Transform toolSlot = slot.transform.Find("Tool Slot");
+                        if (toolSlot != null)
+                        {
+                            objectGrabbable.transform.position = toolSlot.position;
+                        }
+                        objectGrabbable.Drop();
+                        objectGrabbable = null;
+                        DropUIButton.SetActive(false);
+                        
+                        parentTransform.position = selectedTool.transform.position;
+                        //run tool logic
+                        selectedTool.ToolWhenClicked(parentMixture);
+                    }
+                    //else if player has no mixture on hand and the workstation is full
+                    else if (objectGrabbable == null && selectedTool.isFull)
+                    {
+                        //activate UI and pickup mixture
+                        DropUIButton.SetActive(true);
+                                objectGrabbable.Grab(objectGrabPointTransform);
+
+                                dropButton.onClick.RemoveAllListeners();
+                                dropButton.onClick.AddListener(() => 
+                                {
+                                    if(objectGrabbable != null)
+                                    {
+                                        objectGrabbable.Drop();
+                                        objectGrabbable = null;
+                                        DropUIButton.SetActive(false);
+                                    }
+                                });
+
+                        //make workstation usable for other mixtures again
+                        selectedTool.isFull = false;    
+                    }
+                    //if workstation is full or no mixture on hand
+                    else
+                    {
+                        Debug.Log("Mixture is full/No mixture on hand");
+                    }
+
                    }
                
            }

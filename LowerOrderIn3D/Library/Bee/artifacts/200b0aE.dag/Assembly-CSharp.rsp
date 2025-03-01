@@ -374,6 +374,7 @@
 "Assets/3D Laboratory Environment with Appratus/Scripts/PlayerPickUpDrop.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/PotionInteractable.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/SavePlayerPosition.cs"
+"Assets/3D Laboratory Environment with Appratus/Scripts/ToolInteraction.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/TouchManager.cs"
 "Assets/LeanTween/Examples/Scripts/Following.cs"
 "Assets/LeanTween/Examples/Scripts/GeneralAdvancedTechniques.cs"
