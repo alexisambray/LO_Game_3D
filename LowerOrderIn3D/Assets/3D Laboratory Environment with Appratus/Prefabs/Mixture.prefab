@@ -95,8 +95,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1859579, y: 0.68425226, z: 0.5205889}
-  m_Center: {x: -0.01281786, y: 0.17302155, z: 0.0734272}
+  m_Size: {x: 1.0541592, y: 0.39711416, z: 0.3824644}
+  m_Center: {x: 0.1896286, y: 0.029452503, z: 0.0043649673}
 --- !u!114 &237740913440623242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +112,11 @@ MonoBehaviour:
   appearance: 0
   uses: 0
   numberOfTriesLeft: 3
-  launchVelocity: -1500
+  AppearanceFound: 0
+  UseFound: 0
+  interactable: 1
+  isFull: 0
+  launchVelocity: -100
 --- !u!1001 &1743821478384981426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -476,6 +480,10 @@ MonoBehaviour:
   appearance: 0
   uses: 0
   numberOfTriesLeft: 3
+  AppearanceFound: 0
+  UseFound: 0
+  interactable: 1
+  isFull: 0
   launchVelocity: 7
 --- !u!136 &2687287717480552621
 CapsuleCollider:

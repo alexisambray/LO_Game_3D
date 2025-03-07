@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.UI;
+using static ObjectPool;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +34,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject DropUIButton;
     private Button dropButton;
 
+    public List<GameObject> mixturePrefabs;
+
     private void Awake()
     {
         Instance = this;
@@ -42,10 +46,53 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        InitializeMixtures();
         StartDay();
     }
+private void InitializeMixtures()
+{
+    // Get all enum values
+    ObjectPool.Appearance[] appearances = (ObjectPool.Appearance[])System.Enum.GetValues(typeof(ObjectPool.Appearance));
+    ObjectPool.Uses[] uses = (ObjectPool.Uses[])System.Enum.GetValues(typeof(ObjectPool.Uses));
 
+    foreach (ObjectPool.Appearance appearance in appearances)
+    {
+        foreach (ObjectPool.Uses use in uses)
+        {
+            // Create a new instance of the prefab (without adding it to the scene)
+            GameObject mixtureInstance = Instantiate(mixture);
+            mixtureInstance.SetActive(false); // Keep it inactive for now
+
+            // Assign randomized properties
+            ItemPotion potion = mixtureInstance.GetComponent<ItemPotion>();
+            if (potion != null)
+            {
+                potion.appearance = appearance;
+                potion.uses = use;
+            }
+
+            // Add to the list
+            mixturePrefabs.Add(mixtureInstance);
+        }
+    }
+
+    ShuffleList(mixturePrefabs);
+}
+
+    // Fisher-Yates Shuffle Algorithm
+    private void ShuffleList(List<GameObject> list)
+    {
+        for (int i = list.Count - 1; i > 0; i--)
+        {
+            int randIndex = Random.Range(0, i + 1);
+            GameObject temp = list[i];
+            list[i] = list[randIndex];
+            list[randIndex] = temp;
+        }
+    }
     public void InstantiatePrefab(){
+        //only create mixtures if the slot is open. also randomize the stats here
+
         // GameObject mixture1 = Instantiate(mixture, mixtureSlot1);
         // GameObject mixture2 = Instantiate(mixture, mixtureSlot2);
         // GameObject mixture3 = Instantiate(mixture, mixtureSlot3);
@@ -58,23 +105,71 @@ public class GameManager : MonoBehaviour
         // mixture2.transform.localRotation = Quaternion.identity;
         // mixture3.transform.localRotation = Quaternion.identity;
 
-        GameObject mixture1 = Instantiate(mixture);
-        mixture1.transform.SetParent(mixtureSlot1, false); // Keeps prefab’s local transform
-        mixture1.transform.localPosition = Vector3.zero;
-        mixture1.transform.localRotation = Quaternion.identity;
+        List<GameObject> availableMixtures = new List<GameObject>(mixturePrefabs);
 
-        GameObject mixture2 = Instantiate(mixture);
-        mixture2.transform.SetParent(mixtureSlot2, false); // Keeps prefab’s local transform
-        mixture2.transform.localPosition = Vector3.zero;
-        mixture2.transform.localRotation = Quaternion.identity;
+        if(mixtureSlot1.childCount == 0)
+        {
+            GameObject mixture1 = InstantiateAndRemove(mixtureSlot1);
+        }
 
-        GameObject mixture3 = Instantiate(mixture);
-        mixture3.transform.SetParent(mixtureSlot3, false); // Keeps prefab’s local transform
-        mixture3.transform.localPosition = Vector3.zero;
-        mixture3.transform.localRotation = Quaternion.identity;
+        if(mixtureSlot2.childCount == 0)
+        {
+        GameObject mixture2 = InstantiateAndRemove(mixtureSlot2);
+        }
+
+        if(mixtureSlot3.childCount == 0)
+        {
+        GameObject mixture3 = InstantiateAndRemove(mixtureSlot3);
+        }
+
+
+
+        // if(mixtureSlot1.childCount == 0)
+        // {
+        // GameObject mixture1 = Instantiate(mixture);
+        // mixture1.transform.SetParent(mixtureSlot1, false); // Keeps prefab’s local transform
+        // mixture1.transform.localPosition = Vector3.zero;
+        // mixture1.transform.localRotation = Quaternion.identity;
+        // }
+
+        // if(mixtureSlot2.childCount == 0)
+        // {
+        // GameObject mixture2 = Instantiate(mixture);
+        // mixture2.transform.SetParent(mixtureSlot2, false); // Keeps prefab’s local transform
+        // mixture2.transform.localPosition = Vector3.zero;
+        // mixture2.transform.localRotation = Quaternion.identity;
+        // }
+
+        // if(mixtureSlot3.childCount == 0)
+        // {
+        // GameObject mixture3 = Instantiate(mixture);
+        // mixture3.transform.SetParent(mixtureSlot3, false); // Keeps prefab’s local transform
+        // mixture3.transform.localPosition = Vector3.zero;
+        // mixture3.transform.localRotation = Quaternion.identity;
+        // }
+
+
 
         
     }   
+
+private GameObject InstantiateAndRemove(Transform slot)
+{
+    if (mixturePrefabs.Count == 0)
+        return null;
+
+    GameObject selectedMixture = mixturePrefabs[0]; // Pick the first item
+    mixturePrefabs.RemoveAt(0); // Remove from the list
+
+    // Activate and place the mixture in the scene
+    selectedMixture.SetActive(true);
+    selectedMixture.transform.SetParent(slot, false);
+    selectedMixture.transform.localPosition = Vector3.zero;
+    selectedMixture.transform.localRotation = Quaternion.identity;
+
+    return selectedMixture;
+}
+
 
     public void StartDay()
     {
@@ -100,8 +195,12 @@ public class GameManager : MonoBehaviour
            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
            RaycastHit hit;
-           float pickUpDistance = 4f;
-           if (Physics.Raycast(ray, out hit, pickUpDistance))
+           float pickUpDistance = 10f;
+
+           int layerToIgnore = LayerMask.GetMask("Untagged");
+
+            // Invert the mask using ~ so that it ignores the specific layer
+            if (Physics.Raycast(ray, out hit, pickUpDistance, ~layerToIgnore))
            {
             //Debug.DrawRay(player.position, player.forward * 10000f, Color.green);
             Debug.Log("Hit " + hit.collider.gameObject.name + " with " + hit.collider.gameObject.tag);

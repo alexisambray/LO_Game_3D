@@ -19,6 +19,7 @@ public class ItemPotion : MonoBehaviour
     [SerializeField] private bool isFull = false;
     [SerializeField] private float launchVelocity;
 
+
     public void Awake()
     {
         //TODO: Randomize appearance and use. It should not be the same as before.
@@ -49,15 +50,25 @@ public class ItemPotion : MonoBehaviour
                 shelfChecker.interactable = false;
                 this.isFull = true;
                 this.interactable = false;
+
+                this.transform.SetParent(null);
                 
                 //if item does not match the shelf
                 if(!DoesItemClickOnShelf(this, shelfChecker))
                 {
                     Debug.Log("Potion does not match the shelf.");
+                    
+                    this.transform.position = this.transform.position - new Vector3(1f, 0, 0);
+
                     rigidBody.isKinematic = false;
-                    rigidBody.AddRelativeForce(new Vector3
-                                            (launchVelocity, 0, 0));
-                                            numberOfTriesLeft -= 1;
+                    rigidBody.velocity = Vector3.zero;
+                    rigidBody.angularVelocity = Vector3.zero;
+
+                    this.transform.SetParent(null);
+
+                    // Vector3 pushDirection = (this.transform.position - shelfChecker.transform.position).normalized;
+                    // rigidBody.AddForce(pushDirection * 10f, ForceMode.Impulse); // Adjust force if needed
+
                     //enable clicking of shelf and mixture
                     shelfChecker.isFull = false;
                     shelfChecker.interactable = true;
@@ -66,18 +77,21 @@ public class ItemPotion : MonoBehaviour
                     
                 }
             }
-                else if(numberOfTriesLeft == 0)
+                else if(numberOfTriesLeft <= 0)
                 {
                     //remove potion from shelf slot
                     //TODO: add remove logic for potion
-                    //Debug.Log("Potion is destroyed");
-                    //Destroy(this, 5);
-                    other.GetComponent<ItemPotion>().isFull = false;
+                    Debug.Log("No tries left, removing potion.");
+                    Destroy(gameObject, 2f); // Delayed destroy for effect
                 }
             
         }
     }
 
+    public void OnTriggerExit(Collider other)
+    {
+        numberOfTriesLeft -= 1;
+    }
 
 
 }
