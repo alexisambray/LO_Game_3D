@@ -13,8 +13,6 @@ public class ObjectGrabbable : MonoBehaviour
     private void Awake()
     {
      objectRigidbody = GetComponent<Rigidbody>();   
-    //  if(objectRigidbody == null) { Debug.Log("This is empty"); }
-    //  else { Debug.Log("rigidbody cool"); }
     }
 
     public void Grab(Transform objectGrabPointTransform){
@@ -31,14 +29,32 @@ public class ObjectGrabbable : MonoBehaviour
         else objectRigidbody.useGravity = true;
     }
 
-    private void FixedUpdate()
+    // private void FixedUpdate()
+    // {
+    //     if(objectGrabPointTransform != null)
+    //     {
+    //         float lerpSpeed = 10f;
+    //         Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
+    //         objectRigidbody.MovePosition(newPosition);
+    //     }
+    // }
+
+private void FixedUpdate()
+{
+    if (objectGrabPointTransform != null)
     {
-        if(objectGrabPointTransform != null)
+        float lerpSpeed = 10f;
+        Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
+        objectRigidbody.MovePosition(newPosition);
+
+        // Check if object is close enough to the target position
+        if (Vector3.Distance(transform.position, objectGrabPointTransform.position) < 0.01f)
         {
-            float lerpSpeed = 10f;
-            Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
-            objectRigidbody.MovePosition(newPosition);
+            objectRigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+            objectRigidbody.isKinematic = true; // Disable physics-based movement
+            objectRigidbody.freezeRotation = true; // Prevent rotation
         }
     }
+}
 
 }

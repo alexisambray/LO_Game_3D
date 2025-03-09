@@ -10,10 +10,12 @@ using static ObjectPool;
 public class ToolInteraction : MonoBehaviour
 {
     [SerializeField] public WorkTools tools;
+    [SerializeField] public LoadingBar loadingBar;
     [SerializeField] public bool isFull = false;
 
     ItemPotion itemPotion;
-    [SerializeField] public LoadingBar loadingBar;
+    public Transform toolSlot;
+    
 
     public bool ToolSelection(ItemPotion potion,  ToolInteraction workstation)
     {
@@ -51,6 +53,10 @@ public class ToolInteraction : MonoBehaviour
 
         this.itemPotion = potion;   
         objectRigidbody.isKinematic = true;
+
+        this.itemPotion.transform.SetParent(toolSlot, false);
+        this.itemPotion.transform.localPosition = Vector3.zero;
+
         
         isFull = true;
         //TODO: Implement Loading Bar Animation. Enable when clicked
