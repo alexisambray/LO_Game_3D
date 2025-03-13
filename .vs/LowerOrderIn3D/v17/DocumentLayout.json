@@ -1,0 +1,358 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|c:\\users\\miggy\\documents\\github\\lo_game_3d\\lowerorderin3d\\assets\\3d laboratory environment with appratus\\scripts\\playerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\playerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|c:\\users\\miggy\\documents\\github\\lo_game_3d\\lowerorderin3d\\assets\\3d laboratory environment with appratus\\scripts\\outline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\outline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\outlinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\outlinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\iinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\iinteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\movement controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\movement controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\itempotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\itempotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\playerinteract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\potioninteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\potioninteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\playerinteractui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\playerinteractui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\pickupsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\pickupsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\inventorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\loadplayerposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\loadplayerposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\touchmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\touchmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\itemspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\itemspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\objectpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\objectpool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\itempickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\itempickup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\saveplayerposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\saveplayerposition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\assets\\3d laboratory environment with appratus\\scripts\\mouselook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1BF918F-22E6-B760-80DA-E17F01354834}|Assembly-CSharp.csproj|solutionrelative:assets\\3d laboratory environment with appratus\\scripts\\mouselook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerInteraction.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteraction.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteraction.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteraction.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteraction.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T07:44:23.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Outline.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\Outline.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\Outline.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\Outline.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\Outline.cs",
+              "ViewState": "AQIAAE4BAAAAAAAAAAAAAGwBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T01:59:36.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OutlineController.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\OutlineController.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\OutlineController.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\OutlineController.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\OutlineController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAA1wCEAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T12:39:32.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PlayerInteractUI.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteractUI.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteractUI.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteractUI.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteractUI.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBkAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T12:30:04.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PotionInteractable.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\PotionInteractable.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\PotionInteractable.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\PotionInteractable.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\PotionInteractable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T12:17:45.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PlayerInteract.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteract.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteract.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteract.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\PlayerInteract.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T12:08:21.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IInteractable.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\IInteractable.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\IInteractable.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\IInteractable.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\IInteractable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T11:58:32.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PickupSystem.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\PickupSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\PickupSystem.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\PickupSystem.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\PickupSystem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T17:48:36.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ItemController.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemController.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemController.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemController.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T06:02:41.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ItemSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemSpawner.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemSpawner.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemSpawner.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T05:52:58.697Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SavePlayerPosition.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\SavePlayerPosition.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\SavePlayerPosition.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\SavePlayerPosition.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\SavePlayerPosition.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T05:47:15.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LoadPlayerPosition.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\LoadPlayerPosition.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\LoadPlayerPosition.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\LoadPlayerPosition.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\LoadPlayerPosition.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAYwA0AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T05:45:57.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InventoryManager.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\InventoryManager.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\InventoryManager.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\InventoryManager.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\InventoryManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T05:22:34.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ItemPickup.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemPickup.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemPickup.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemPickup.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemPickup.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T05:19:59.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TouchManager.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\TouchManager.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\TouchManager.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\TouchManager.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\TouchManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T05:13:47.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Movement Controller.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\Movement Controller.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\Movement Controller.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\Movement Controller.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\Movement Controller.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T13:40:30.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "MouseLook.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\MouseLook.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\MouseLook.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\MouseLook.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\MouseLook.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T05:33:13.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Movement.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\Movement.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\Movement.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\Movement.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\Movement.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T05:32:30.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ItemPotion.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemPotion.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemPotion.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemPotion.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\ItemPotion.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAowC0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T13:31:34.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ObjectPool.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\ObjectPool.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\ObjectPool.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\ObjectPool.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\ObjectPool.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T13:31:11.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\miggy\\Documents\\GitHub\\LO_Game_3D\\LowerOrderIn3D\\Assets\\3D Laboratory Environment with Appratus\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\3D Laboratory Environment with Appratus\\Scripts\\GameManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T13:30:44.081Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
