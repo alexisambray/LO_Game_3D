@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -267,19 +268,21 @@ private void HandleRaycast(Vector2 touchPosition)
 
     private void HandleToolInteraction(GameObject toolObj)
     {
-        ToolInteraction tool = toolObj.GetComponent<ToolInteraction>();
 
-        if (objectGrabbable != null && !tool.isFull && tool.interactable)
+        ToolInteraction tool = toolObj.GetComponent<ToolInteraction>();
+        ItemPotion item;
+        //set item 
+        if (objectGrabbable != null)
         {
-            objectGrabbable.transform.SetParent(toolObj.transform, false);
-            objectGrabbable.Drop();
-            tool.ToolWhenClicked(objectGrabbable.GetComponent<ItemPotion>());
-            objectGrabbable = null;
-            dropUIButton.SetActive(false);
-            mixtureChecklistUIButton.SetActive(false);
-            tool.isFull = true;
+            item = objectGrabbable.gameObject.GetComponent<ItemPotion>();
         }
-        else if (objectGrabbable == null && tool.isFull && tool.interactable)
+        else
+        {
+            item = null;
+        }
+
+        //if player is not holding anything and workstation is done with the mixture
+        if (objectGrabbable == null && tool.isFull && tool.interactable)
         {
             dropUIButton.SetActive(true);
             dropButton.onClick.RemoveAllListeners();
@@ -294,7 +297,33 @@ private void HandleRaycast(Vector2 touchPosition)
 
             tool.isFull = false;
             Debug.Log("isFull set to false for " + toolObj.name);
+
+            OnItemPickUpOutline();
+            
+            return;
         }
+
+        if (objectGrabbable == null) return;
+
+        //if mixture has been tested with that tool, do nothing
+        if(item.testedWithFlashlight && tool.tools == ObjectPool.WorkTools.Flashlight) return;
+        if(item.testedWithMicroscope && tool.tools == ObjectPool.WorkTools.Microscope) return;
+        if(item.testedWithCentrifuge && tool.tools == ObjectPool.WorkTools.Centrifuge) return;
+
+        //if player has a mixture, handle placing of mixture on workbench
+        if (objectGrabbable != null && !tool.isFull && tool.interactable)
+        {
+            objectGrabbable.transform.SetParent(toolObj.transform, false);
+            objectGrabbable.Drop();
+            tool.ToolWhenClicked(objectGrabbable.GetComponent<ItemPotion>());
+            objectGrabbable = null;
+            dropUIButton.SetActive(false);
+            mixtureChecklistUIButton.SetActive(false);
+            tool.isFull = true;
+            OnItemDropOutline();
+            return;
+        }
+        
     }
 
     private void HandleUseInteraction(GameObject useObj)
@@ -317,10 +346,23 @@ private void HandleRaycast(Vector2 touchPosition)
 
     public void OnItemPickUpOutline()
     {
+        ItemPotion item = null;
+        if(objectGrabbable != null)
+        {
+            item = objectGrabbable.gameObject.GetComponent<ItemPotion>();
+        }
+
         foreach (var outlineObject in outlineObjects)
         {
-            outlineObject.ToggleOutline(true);
+            // Check the outlineObject name and disable it if the mixture was tested with the corresponding workstation
+            if ((item != null && item.testedWithMicroscope && outlineObject.name == "WorkStation") ||
+                (item != null && item.testedWithCentrifuge && outlineObject.name == "WorkStation2") ||
+                (item != null && item.testedWithFlashlight && outlineObject.name == "WorkStation3"))
+            {
+                continue; // Skip toggling this outlineObject
+            }
 
+            outlineObject.ToggleOutline(true);
         }
     }
 

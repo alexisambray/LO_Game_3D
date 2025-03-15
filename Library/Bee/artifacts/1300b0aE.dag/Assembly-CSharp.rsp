@@ -374,6 +374,7 @@
 "Assets/3D Laboratory Environment with Appratus/Scripts/OutlineController.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/PlayerPickUpDrop.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/SavePlayerPosition.cs"
+"Assets/3D Laboratory Environment with Appratus/Scripts/ShelfManager.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/ToolInteraction.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/TouchManager.cs"
 "Assets/3D Laboratory Environment with Appratus/Scripts/UseInteraction.cs"
