@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
     public int daysLeftToCompletion;
     private GameObject mixtureSentToLab; // Track the active mixture being processed
     public Transform useSlot;
+    [SerializeField] private int mixturesPlacedInShelf = 0;
+    [SerializeField] private int totalMixturesToPlace;
 
     private void Awake()
     {
@@ -458,28 +460,6 @@ public void HandleMixtureSubmission(UseInteraction mixtureSentToLab, int totalDa
         Debug.Log("Potion has been sent to the FDA!");
     }
 
-// public void ProcessMixture(GameObject mixtureObject, int days, Dictionary<string, bool> selectedChecks)
-// {
-//     if (mixtureSentToLab != null) 
-//     {
-//         Debug.Log("You must wait until the current potion is retrieved before sending another.");
-//         return;
-//     }
-
-//     // Assign the GameObject, not the script component
-//     mixtureSentToLab = mixtureObject;
-
-//     if (mixtureSentToLab.TryGetComponent(out UseInteraction mixture))
-//     {
-//         mixture.daysLeftToCompletion = days; // Store how many days it takes
-//         // StartCoroutine(WaitForRetrieval(mixture));
-//         Debug.Log("DaysLeftToComplete Updated!");
-//     }
-//     else{
-//         Debug.Log("There is no UseInteraction");
-//     }
-// }
-
     public bool IsPotionBeingProcessed()
     {
         return mixtureSentToLab != null;
@@ -493,7 +473,74 @@ public void HandleMixtureSubmission(UseInteraction mixtureSentToLab, int totalDa
         }
     }
 
+    public void SetTotalMixtures(int total)
+    {
+        totalMixturesToPlace = total;
+        mixturesPlacedInShelf = 0;
+    }
 
+    public void RegisterPlacedMixture()
+    {
+        mixturesPlacedInShelf++;
 
+        if (mixturesPlacedInShelf == totalMixturesToPlace)
+        {
+            Debug.Log("All mixtures placed! Checking if they are correct...");
+            ValidateShelfPlacement();
+        }
+    }
+
+    private void ValidateShelfPlacement()
+    {
+        ItemPotion[] shelfMixtures = FindObjectsOfType<ItemPotion>();
+        bool allCorrect = true;
+
+        foreach (ItemPotion potion in shelfMixtures)
+        {
+            if (potion.CompareTag("Shelf"))
+            {
+                ItemPotion placedPotion = FindMatchingPotion(potion);
+
+                if (placedPotion == null || !potion.DoesItemClickOnShelf(placedPotion, potion))
+                {
+                    allCorrect = false;
+                    Debug.Log("Potion does not match the shelf.");
+                    
+                    // Handle incorrect placement
+                    placedPotion.transform.position -= new Vector3(1f, 0, 0);
+                    Rigidbody rigidBody = placedPotion.GetComponent<Rigidbody>();
+                    rigidBody.isKinematic = false;
+                    rigidBody.velocity = Vector3.zero;
+                    rigidBody.angularVelocity = Vector3.zero;
+                    placedPotion.transform.SetParent(null);
+
+                    // Re-enable shelf interaction
+                    potion.isFull = false;
+                    potion.interactable = true;
+                    placedPotion.interactable = true;
+                }
+            }
+        }
+
+        if (allCorrect)
+        {
+            Debug.Log("All mixtures are correctly placed!");
+            // Add success logic here
+        }
+    }
+
+    private ItemPotion FindMatchingPotion(ItemPotion shelfPotion)
+    {
+        ItemPotion[] allMixtures = FindObjectsOfType<ItemPotion>();
+
+        foreach (ItemPotion mixture in allMixtures)
+        {
+            if (mixture.isFull && mixture.DoesItemClickOnShelf(mixture, shelfPotion))
+            {
+                return mixture;
+            }
+        }
+        return null;
+    }
 }
 

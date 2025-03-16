@@ -17,7 +17,7 @@ public class ItemPotion : MonoBehaviour
     [SerializeField] public bool AppearanceFound = false;
     [SerializeField] public bool UseFound = false;
     public bool interactable = true;
-    [SerializeField] private bool isFull = false;
+    [SerializeField] public bool isFull = false;
     [SerializeField] private float launchVelocity;
 
     [Header("Mixture-Tool Appearance Interactions")]
@@ -64,6 +64,8 @@ public class ItemPotion : MonoBehaviour
                 this.interactable = false;
 
                 this.transform.SetParent(null);
+
+                GameManager.Instance.RegisterPlacedMixture();
                 
                 // //if item does not match the shelf
                 // if(!DoesItemClickOnShelf(this, shelfChecker))
