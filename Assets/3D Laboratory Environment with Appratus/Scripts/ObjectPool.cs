@@ -25,7 +25,6 @@ public class ObjectPool : MonoBehaviour
     {
         Flashlight,
         Centrifuge,
-        Microscope,
-        Observe
+        Microscope
     }
 }

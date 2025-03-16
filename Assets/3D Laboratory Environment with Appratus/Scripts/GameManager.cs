@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public GameObject useChecklistCanvas;
     private Dictionary<UseInteraction, (int retrievalDay, Dictionary<string, bool> checks)> mixturesInQueue 
         = new Dictionary<UseInteraction, (int, Dictionary<string, bool>)>();
+    public UseInteraction useInteraction;
     public int daysLeftToCompletion;
     private GameObject mixtureSentToLab; // Track the active mixture being processed
     public Transform useSlot;
@@ -123,11 +124,7 @@ public class GameManager : MonoBehaviour
         dayCounter++;
         UpdateDayUI();
         InstantiateMixtures();
-
-        if(daysLeftToCompletion > 0)
-        {
-            daysLeftToCompletion--;
-        }
+        CheckAllMixturesInFDA();
     }
 
     private void UpdateDayUI()
@@ -135,6 +132,25 @@ public class GameManager : MonoBehaviour
         if (dayText != null)
         {
             dayText.text = $"Day: {dayCounter}";
+        }
+    }
+
+    private void CheckAllMixturesInFDA()
+    {
+        ItemPotion[] mixtures = FindObjectsOfType<ItemPotion>(true);
+        foreach(ItemPotion mixture in mixtures)
+        {
+            if(mixture.daysInFDA > 0)
+            {
+                mixture.daysInFDA--;
+                Debug.Log($"Mixture {mixture.name} now has {mixture.daysInFDA} days left.");
+            }
+
+            if(mixture.daysInFDA == 0)
+            {
+                mixture.gameObject.SetActive(true);
+                mixture.interactable = true;
+            }
         }
     }
 
@@ -167,7 +183,7 @@ public class GameManager : MonoBehaviour
     {
         //TODO: Debug and fix handling objects even when controlling the UI element
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, 2f, ~LayerMask.GetMask("UI")))
+        if (Physics.Raycast(ray, out RaycastHit hit, 3f, ~LayerMask.GetMask("UI")))
         {
             Debug.Log("Hit " + hit.collider.gameObject);
             switch (hit.collider.gameObject.tag)
@@ -197,7 +213,7 @@ private void HandleRaycast(Vector2 touchPosition)
         //TODO: Debug and fix handling objects even when controlling the UI element
         Ray ray = playerCamera.ScreenPointToRay(touchPosition);
         
-        if (Physics.Raycast(ray, out RaycastHit hit, 2f, ~LayerMask.GetMask("UI")))
+        if (Physics.Raycast(ray, out RaycastHit hit, 3f, ~LayerMask.GetMask("UI")))
         {
             switch (hit.collider.gameObject.tag)
             {
@@ -284,6 +300,7 @@ private void HandleRaycast(Vector2 touchPosition)
         //if player is not holding anything and workstation is done with the mixture
         if (objectGrabbable == null && tool.isFull && tool.interactable)
         {
+            Debug.Log("Get that thirty");
             dropUIButton.SetActive(true);
             dropButton.onClick.RemoveAllListeners();
             dropButton.onClick.AddListener(DropItem);
@@ -295,7 +312,10 @@ private void HandleRaycast(Vector2 touchPosition)
             objectGrabbable = toolObj.GetComponentInChildren<ObjectGrabbable>();
             objectGrabbable.Grab(objectGrabPointTransform);
 
+            Debug.Log($"Tool object: {toolObj.name}, isFull before: {tool.isFull}");
             tool.isFull = false;
+            Debug.Log($"Tool object: {toolObj.name}, isFull after: {tool.isFull}");
+
             Debug.Log("isFull set to false for " + toolObj.name);
 
             OnItemPickUpOutline();
@@ -390,6 +410,7 @@ private void HandleRaycast(Vector2 touchPosition)
     public void OpenUseChecklist()
     {
         useChecklistCanvas.SetActive(true);
+        useInteraction.ClearSelectedChecks();
     }
 
     public void CloseUseChecklist()
@@ -397,65 +418,81 @@ private void HandleRaycast(Vector2 touchPosition)
         useChecklistCanvas.SetActive(false);
     }   
 
-public void HandleMixtureSubmission(UseInteraction mixtureSentToLab, int totalDays)
+public void HandleMixtureSubmission(UseInteraction mixtureSentToLab, int totalDays, Dictionary<string, bool> selectedChecks)
     {
         if (GameManager.Instance.IsPotionBeingProcessed()) // Prevent multiple submissions
         {
             Debug.Log("You must wait until the current potion is analyzed!");
             return;
         }
-            ProcessMixture(mixtureSentToLab.gameObject, totalDays, mixtureSentToLab.GetSelectedChecks());
+        if (objectGrabbable == null)
+        {
+        Debug.LogError("Mixture is null. Cannot process submission.");
+        return;
+        }
 
+        ItemPotion potion = objectGrabbable.gameObject.GetComponent<ItemPotion>();
+        potion.daysInFDA = totalDays;
+        // Update test results based on selected toggles
+        potion.testedForFoodAndBeverage = selectedChecks.ContainsKey("Food and Beverage");
+        potion.testedForMedicine = selectedChecks.ContainsKey("Medicine");
+        potion.testedForHouseCleaning = selectedChecks.ContainsKey("House Supplies");
+        potion.testedForAgriculture = selectedChecks.ContainsKey("Agriculture");
+        potion.testedForCosmetics = selectedChecks.ContainsKey("Cosmetic");
+        potion.testedForPersonalHygiene = selectedChecks.ContainsKey("Personal Hygiene");
+
+        Debug.Log($"Potion updated in GameManager: {potion.name}, Days in FDA: {potion.daysInFDA}");
         
-
+        
+        //TODO: Refactor this to allow a queue of boxes (Move mixture to it's respective slot for pickup)
         objectGrabbable.transform.SetParent(useSlot, false);
         objectGrabbable.transform.localPosition = Vector3.zero;
         objectGrabbable.transform.rotation = Quaternion.identity;
 
+        //Disable mixture and UI
         objectGrabbable.gameObject.SetActive(false);
         DropItem();
         CloseUseChecklist();
         dropUIButton.SetActive(false);
         mixtureChecklistUIButton.SetActive(false);
-
+        Debug.Log("Potion has been sent to the FDA!");
     }
 
-public void ProcessMixture(GameObject mixtureObject, int days, Dictionary<string, bool> selectedChecks)
-{
-    if (mixtureSentToLab != null) 
-    {
-        Debug.Log("You must wait until the current potion is retrieved before sending another.");
-        return;
-    }
-
-    // Assign the GameObject, not the script component
-    mixtureSentToLab = mixtureObject;
-
-    if (mixtureSentToLab.TryGetComponent(out UseInteraction mixture))
-    {
-        mixture.daysLeftToCompletion = days; // Store how many days it takes
-        // StartCoroutine(WaitForRetrieval(mixture));
-    }
-}
-
-// private IEnumerator WaitForRetrieval(UseInteraction mixture)
+// public void ProcessMixture(GameObject mixtureObject, int days, Dictionary<string, bool> selectedChecks)
 // {
-//     while (mixture.daysLeftToCompletion > 0)
+//     if (mixtureSentToLab != null) 
 //     {
-//         yield return new WaitForSeconds(1); // Simulating 1 day per second
-//         mixture.daysLeftToCompletion--; // Countdown
-//         Debug.Log("Days left for potion retrieval: " + mixture.daysLeftToCompletion);
+//         Debug.Log("You must wait until the current potion is retrieved before sending another.");
+//         return;
 //     }
 
-//     Debug.Log("Potion is ready for retrieval!");
-//     mixtureSentToLab = null; // Allow new potion submissions
-// }
+//     // Assign the GameObject, not the script component
+//     mixtureSentToLab = mixtureObject;
 
+//     if (mixtureSentToLab.TryGetComponent(out UseInteraction mixture))
+//     {
+//         mixture.daysLeftToCompletion = days; // Store how many days it takes
+//         // StartCoroutine(WaitForRetrieval(mixture));
+//         Debug.Log("DaysLeftToComplete Updated!");
+//     }
+//     else{
+//         Debug.Log("There is no UseInteraction");
+//     }
+// }
 
     public bool IsPotionBeingProcessed()
     {
         return mixtureSentToLab != null;
     }
+
+    public void ToggleMixtureChecklist()
+    {
+        if(mixtureChecklist != null)
+        {
+            mixtureChecklist.OpenAppearanceChecklistPanel();
+        }
+    }
+
 
 
 }

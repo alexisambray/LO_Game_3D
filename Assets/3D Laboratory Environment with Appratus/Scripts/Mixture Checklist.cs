@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static ObjectPool;
@@ -10,12 +11,16 @@ public class MixtureChecklist : MonoBehaviour
 {
     ObjectGrabbable mixture;
     Canvas UI;
+    public ImageManager imageManager;
     public List<Toggle> checkToggles = new List<Toggle>();
 
 
     [Header("Checklist UI Elements")]   
     public GameObject appearanceChecklist;
     public GameObject useChecklist;
+    public GameObject extendedAppearanceChecklist;
+    public Image resultImage;
+    public Text resultText;
     
 
     [Header("Appearance Button Elements")]
@@ -50,81 +55,6 @@ public class MixtureChecklist : MonoBehaviour
     public GameObject agricultureCheckMark;
     public GameObject agricultureXMark;
 
-
-    [Header("Images Stored")]
-    public Image trueSolutionFoodFlashlightImage;
-    public Image trueSolutionFoodCentrifugeImage;
-    public Image trueSolutionFoodMicroscopeImage;
-
-    public Image trueSolutionMedicineFlashlightImage;
-    public Image trueSolutionMedicineCentrifugeImage;
-    public Image trueSolutionMedicineMicroscopeImage;
-
-    public Image trueSolutionCosmeticsFlashlightImage;
-    public Image trueSolutionCosmeticsCentrifugeImage;
-    public Image trueSolutionCosmeticsMicroscopeImage;
-
-    public Image trueSolutionCleaningFlashlightImage;
-    public Image trueSolutionCleaningCentrifugeImage;
-    public Image trueSolutionCleaningMicroscopeImage;
-
-    public Image trueSolutionHygieneFlashlightImage;
-    public Image trueSolutionHygieneCentrifugeImage;
-    public Image trueSolutionHygieneMicroscopeImage;
-
-    public Image trueSolutionAgricultureFlashlightImage;
-    public Image trueSolutionAgricultureCentrifugeImage;
-    public Image trueSolutionAgricultureMicroscopeImage;
-
-    public Image suspensionFoodFlashlightImage;
-    public Image suspensionFoodCentrifugeImage;
-    public Image suspensionFoodMicroscopeImage;
-
-    public Image suspensionMedicineFlashlightImage;
-    public Image suspensionMedicineCentrifugeImage;
-    public Image suspensionMedicineMicroscopeImage;
-
-    public Image suspensionCosmeticsFlashlightImage;
-    public Image suspensionCosmeticsCentrifugeImage;
-    public Image suspensionCosmeticsMicroscopeImage;
-
-    public Image suspensionCleaningFlashlightImage;
-    public Image suspensionCleaningCentrifugeImage;
-    public Image suspensionCleaningMicroscopeImage;
-
-    public Image suspensionHygieneFlashlightImage;
-    public Image suspensionHygieneCentrifugeImage;
-    public Image suspensionHygieneMicroscopeImage;
-
-    public Image suspensionAgricultureFlashlightImage;
-    public Image suspensionAgricultureCentrifugeImage;
-    public Image suspensionAgricultureMicroscopeImage;
-
-    public Image colloidFoodFlashlightImage;
-    public Image colloidFoodCentrifugeImage;
-    public Image colloidFoodMicroscopeImage;
-
-    public Image colloidMedicineFlashlightImage;
-    public Image colloidMedicineCentrifugeImage;
-    public Image colloidMedicineMicroscopeImage;
-
-    public Image colloidCosmeticsFlashlightImage;
-    public Image colloidCosmeticsCentrifugeImage;
-    public Image colloidCosmeticsMicroscopeImage;
-
-    public Image colloidCleaningFlashlightImage;
-    public Image colloidCleaningCentrifugeImage;
-    public Image colloidCleaningMicroscopeImage;
-
-    public Image colloidHygieneFlashlightImage;
-    public Image colloidHygieneCentrifugeImage;
-    public Image colloidHygieneMicroscopeImage;
-
-    public Image colloidAgricultureFlashlightImage;
-    public Image colloidAgricultureCentrifugeImage;
-    public Image colloidAgricultureMicroscopeImage;
-
-
     void Start()
     {
         checkToggles = GetComponentsInChildren<Toggle>().ToList();
@@ -145,6 +75,8 @@ public class MixtureChecklist : MonoBehaviour
     public void UpdateStatsOnUI()
     {
         removeTickMarks();
+        useChecklist.SetActive(true);
+        extendedAppearanceChecklist.SetActive(false);
         
         ItemPotion currentPotion = mixture.gameObject.GetComponent<ItemPotion>();
 
@@ -269,95 +201,106 @@ public void UpdateToggleGraphics(ItemPotion currentPotion, Dictionary<string, To
     }
 }
 
-
-
-public Image GetMixtureResultImage(Appearance appearance, Uses use, WorkTools tool)
+public void OpenAppearanceChecklistPanel()
 {
-    Dictionary<(Appearance, Uses, WorkTools), Image> mixtureImages = new Dictionary<(Appearance, Uses, WorkTools), Image>
+    //opens the detailed panel and closes the other one. 
+    bool isExtendendPanelOpen = extendedAppearanceChecklist.activeSelf;
+
+    extendedAppearanceChecklist.SetActive(!isExtendendPanelOpen);
+    useChecklist.SetActive(isExtendendPanelOpen);
+
+    //updates and assign correct image depending on the mixture results
+    ItemPotion potion = null;
+    if(mixture != null)
     {
-        // 🔵 True Solution
-        { (Appearance.TrueSolution, Uses.FoodAndBeverage, WorkTools.Flashlight), trueSolutionFoodFlashlightImage },
-        { (Appearance.TrueSolution, Uses.FoodAndBeverage, WorkTools.Centrifuge), trueSolutionFoodCentrifugeImage },
-        { (Appearance.TrueSolution, Uses.FoodAndBeverage, WorkTools.Microscope), trueSolutionFoodMicroscopeImage },
-
-        { (Appearance.TrueSolution, Uses.Medicine, WorkTools.Flashlight), trueSolutionMedicineFlashlightImage },
-        { (Appearance.TrueSolution, Uses.Medicine, WorkTools.Centrifuge), trueSolutionMedicineCentrifugeImage },
-        { (Appearance.TrueSolution, Uses.Medicine, WorkTools.Microscope), trueSolutionMedicineMicroscopeImage },
-
-        { (Appearance.TrueSolution, Uses.Cosmetics, WorkTools.Flashlight), trueSolutionCosmeticsFlashlightImage },
-        { (Appearance.TrueSolution, Uses.Cosmetics, WorkTools.Centrifuge), trueSolutionCosmeticsCentrifugeImage },
-        { (Appearance.TrueSolution, Uses.Cosmetics, WorkTools.Microscope), trueSolutionCosmeticsMicroscopeImage },
-
-        { (Appearance.TrueSolution, Uses.HouseCleaning, WorkTools.Flashlight), trueSolutionCleaningFlashlightImage },
-        { (Appearance.TrueSolution, Uses.HouseCleaning, WorkTools.Centrifuge), trueSolutionCleaningCentrifugeImage },
-        { (Appearance.TrueSolution, Uses.HouseCleaning, WorkTools.Microscope), trueSolutionCleaningMicroscopeImage },
-
-        { (Appearance.TrueSolution, Uses.PersonalHygiene, WorkTools.Flashlight), trueSolutionHygieneFlashlightImage },
-        { (Appearance.TrueSolution, Uses.PersonalHygiene, WorkTools.Centrifuge), trueSolutionHygieneCentrifugeImage },
-        { (Appearance.TrueSolution, Uses.PersonalHygiene, WorkTools.Microscope), trueSolutionHygieneMicroscopeImage },
-
-        { (Appearance.TrueSolution, Uses.Agriculture, WorkTools.Flashlight), trueSolutionAgricultureFlashlightImage },
-        { (Appearance.TrueSolution, Uses.Agriculture, WorkTools.Centrifuge), trueSolutionAgricultureCentrifugeImage },
-        { (Appearance.TrueSolution, Uses.Agriculture, WorkTools.Microscope), trueSolutionAgricultureMicroscopeImage },
-
-        // 🔴 Suspension
-        { (Appearance.Suspension, Uses.FoodAndBeverage, WorkTools.Flashlight), suspensionFoodFlashlightImage },
-        { (Appearance.Suspension, Uses.FoodAndBeverage, WorkTools.Centrifuge), suspensionFoodCentrifugeImage },
-        { (Appearance.Suspension, Uses.FoodAndBeverage, WorkTools.Microscope), suspensionFoodMicroscopeImage },
-
-        { (Appearance.Suspension, Uses.Medicine, WorkTools.Flashlight), suspensionMedicineFlashlightImage },
-        { (Appearance.Suspension, Uses.Medicine, WorkTools.Centrifuge), suspensionMedicineCentrifugeImage },
-        { (Appearance.Suspension, Uses.Medicine, WorkTools.Microscope), suspensionMedicineMicroscopeImage },
-
-        { (Appearance.Suspension, Uses.Cosmetics, WorkTools.Flashlight), suspensionCosmeticsFlashlightImage },
-        { (Appearance.Suspension, Uses.Cosmetics, WorkTools.Centrifuge), suspensionCosmeticsCentrifugeImage },
-        { (Appearance.Suspension, Uses.Cosmetics, WorkTools.Microscope), suspensionCosmeticsMicroscopeImage },
-
-        { (Appearance.Suspension, Uses.HouseCleaning, WorkTools.Flashlight), suspensionCleaningFlashlightImage },
-        { (Appearance.Suspension, Uses.HouseCleaning, WorkTools.Centrifuge), suspensionCleaningCentrifugeImage },
-        { (Appearance.Suspension, Uses.HouseCleaning, WorkTools.Microscope), suspensionCleaningMicroscopeImage },
-
-        { (Appearance.Suspension, Uses.PersonalHygiene, WorkTools.Flashlight), suspensionHygieneFlashlightImage },
-        { (Appearance.Suspension, Uses.PersonalHygiene, WorkTools.Centrifuge), suspensionHygieneCentrifugeImage },
-        { (Appearance.Suspension, Uses.PersonalHygiene, WorkTools.Microscope), suspensionHygieneMicroscopeImage },
-
-        { (Appearance.Suspension, Uses.Agriculture, WorkTools.Flashlight), suspensionAgricultureFlashlightImage },
-        { (Appearance.Suspension, Uses.Agriculture, WorkTools.Centrifuge), suspensionAgricultureCentrifugeImage },
-        { (Appearance.Suspension, Uses.Agriculture, WorkTools.Microscope), suspensionAgricultureMicroscopeImage },
-
-        // 🟢 Colloid
-        { (Appearance.Colloid, Uses.FoodAndBeverage, WorkTools.Flashlight), colloidFoodFlashlightImage },
-        { (Appearance.Colloid, Uses.FoodAndBeverage, WorkTools.Centrifuge), colloidFoodCentrifugeImage },
-        { (Appearance.Colloid, Uses.FoodAndBeverage, WorkTools.Microscope), colloidFoodMicroscopeImage },
-
-        { (Appearance.Colloid, Uses.Medicine, WorkTools.Flashlight), colloidMedicineFlashlightImage },
-        { (Appearance.Colloid, Uses.Medicine, WorkTools.Centrifuge), colloidMedicineCentrifugeImage },
-        { (Appearance.Colloid, Uses.Medicine, WorkTools.Microscope), colloidMedicineMicroscopeImage },
-
-        { (Appearance.Colloid, Uses.Cosmetics, WorkTools.Flashlight), colloidCosmeticsFlashlightImage },
-        { (Appearance.Colloid, Uses.Cosmetics, WorkTools.Centrifuge), colloidCosmeticsCentrifugeImage },
-        { (Appearance.Colloid, Uses.Cosmetics, WorkTools.Microscope), colloidCosmeticsMicroscopeImage },
-
-        { (Appearance.Colloid, Uses.HouseCleaning, WorkTools.Flashlight), colloidCleaningFlashlightImage },
-        { (Appearance.Colloid, Uses.HouseCleaning, WorkTools.Centrifuge), colloidCleaningCentrifugeImage },
-        { (Appearance.Colloid, Uses.HouseCleaning, WorkTools.Microscope), colloidCleaningMicroscopeImage },
-
-        { (Appearance.Colloid, Uses.PersonalHygiene, WorkTools.Flashlight), colloidHygieneFlashlightImage },
-        { (Appearance.Colloid, Uses.PersonalHygiene, WorkTools.Centrifuge), colloidHygieneCentrifugeImage },
-        { (Appearance.Colloid, Uses.PersonalHygiene, WorkTools.Microscope), colloidHygieneMicroscopeImage },
-
-        { (Appearance.Colloid, Uses.Agriculture, WorkTools.Flashlight), colloidAgricultureFlashlightImage },
-        { (Appearance.Colloid, Uses.Agriculture, WorkTools.Centrifuge), colloidAgricultureCentrifugeImage },
-        { (Appearance.Colloid, Uses.Agriculture, WorkTools.Microscope), colloidAgricultureMicroscopeImage },
-    };
-
-    // Return the correct image if found
-    if (mixtureImages.TryGetValue((appearance, use, tool), out Image resultImage))
-    {
-        return resultImage;
+        potion = mixture.gameObject.GetComponent<ItemPotion>();
     }
 
-    return null; // No image found
+    if (potion != null)
+    {
+        foreach (WorkTools tool in System.Enum.GetValues(typeof(WorkTools)))
+        {
+            UpdateChecklist(potion, tool);
+        }
+    }
+}
+
+public void OpenAppearanceChecklistPanelForMicroscope()
+{
+    //opens the detailed panel and closes the other one. 
+    bool isExtendendPanelOpen = extendedAppearanceChecklist.activeSelf;
+
+    extendedAppearanceChecklist.SetActive(!isExtendendPanelOpen);
+    useChecklist.SetActive(isExtendendPanelOpen);
+
+    //updates and assign correct image depending on the mixture results
+    ItemPotion potion = null;
+    if(mixture != null)
+    {
+        potion = mixture.gameObject.GetComponent<ItemPotion>();
+    }
+
+    if (potion != null)
+    {
+        UpdateChecklist(potion, WorkTools.Microscope);
+    }
+}
+
+public void OpenAppearanceChecklistPanelForFlashlight()
+{
+    //opens the detailed panel and closes the other one. 
+    bool isExtendendPanelOpen = extendedAppearanceChecklist.activeSelf;
+
+    extendedAppearanceChecklist.SetActive(!isExtendendPanelOpen);
+    useChecklist.SetActive(isExtendendPanelOpen);
+
+    //updates and assign correct image depending on the mixture results
+    ItemPotion potion = null;
+    if(mixture != null)
+    {
+        potion = mixture.gameObject.GetComponent<ItemPotion>();
+    }
+
+    if (potion != null)
+    {
+        UpdateChecklist(potion, WorkTools.Flashlight);
+    }
+}
+
+public void OpenAppearanceChecklistPanelForCentrifuge()
+{
+    //opens the detailed panel and closes the other one. 
+    bool isExtendendPanelOpen = extendedAppearanceChecklist.activeSelf;
+
+    extendedAppearanceChecklist.SetActive(!isExtendendPanelOpen);
+    useChecklist.SetActive(isExtendendPanelOpen);
+
+    //updates and assign correct image depending on the mixture results
+    ItemPotion potion = null;
+    if(mixture != null)
+    {
+        potion = mixture.gameObject.GetComponent<ItemPotion>();
+    }
+
+    if (potion != null)
+    {
+        UpdateChecklist(potion, WorkTools.Centrifuge);
+    }
+}
+
+public void UpdateChecklist(ItemPotion potion, WorkTools workTools)
+{
+    if (imageManager == null)
+    {
+    Debug.LogError("ImageManager is not assigned!");
+    return;
+    }
+
+    if (imageManager != null && potion != null)
+    {
+        resultImage.sprite = imageManager.GetImage(potion.appearance, potion.uses, workTools);
+        resultText.text = imageManager.GetText(potion.appearance, potion.uses, workTools);
+    }
 }
 
 }

@@ -14,6 +14,7 @@ public class UseInteraction : MonoBehaviour
     public Toggle HouseCleaning;
     public Toggle PersonalHygiene;
     public Toggle Agriculture;
+    public ItemPotion potion;
 
 
     private Dictionary<string, int> toggleDays = new Dictionary<string, int>(); // Store days per check
@@ -26,15 +27,16 @@ public class UseInteraction : MonoBehaviour
     {
          // Assign names and days for different checks
         toggleDays.Add("Food and Beverage", 1);
-        toggleDays.Add("House Supplies", 2);
-        toggleDays.Add("Agriculture", 3);
-        toggleDays.Add("Medicine", 4);
-        toggleDays.Add("Personal Hygiene", 3);
-        toggleDays.Add("Cosmetic", 2);
-
+        toggleDays.Add("House Supplies", 1);
+        toggleDays.Add("Agriculture", 1);
+        toggleDays.Add("Medicine", 1);
+        toggleDays.Add("Personal Hygiene", 1);
+        toggleDays.Add("Cosmetic", 1);
+        
         // Debug: Check if toggles are assigned
         foreach (var toggle in checkToggles)
         {
+            toggle.isOn = false;
             Debug.Log($"Toggle assigned: {toggle.name}");
         }
 
@@ -45,58 +47,42 @@ public class UseInteraction : MonoBehaviour
         }
     }
 
+    public void ClearSelectedChecks()
+    {
+        foreach (var toggle in checkToggles)
+        {
+            toggle.isOn = false;
+        }
+    }
+
     public void SendMixtureToScientist()
     {
-        GameManager.Instance.HandleMixtureSubmission(this, daysLeftToCompletion);
+        daysLeftToCompletion = CalculateTotalDays();
+        GameManager.Instance.HandleMixtureSubmission(this, daysLeftToCompletion, selectedChecks);
     }
 
-    // Calculate total retrieval days based on selected toggles
+        // Calculate total retrieval days based on selected toggles
     public int CalculateTotalDays()
-{
-    int totalDays = 0;
-    selectedChecks.Clear();
-
-    // Dictionary to map toggles to their corresponding names and days
-    Dictionary<Toggle, (string name, int days)> toggleMappings = new Dictionary<Toggle, (string, int)>
     {
-        { FoodAndBeverage, ("Food and Beverage", 1) },
-        { Medicine, ("Medicine", 4) },
-        { Cosmetics, ("Cosmetic", 2) },
-        { HouseCleaning, ("House Supplies", 2) },
-        { PersonalHygiene, ("Personal Hygiene", 3) },
-        { Agriculture, ("Agriculture", 3) }
-    };
+        int totalDays = 0;
+        selectedChecks.Clear();
 
-    foreach (var toggleEntry in toggleMappings)
-    {
-        Toggle toggle = toggleEntry.Key;
-        string checkName = toggleEntry.Value.name;
-        int days = toggleEntry.Value.days;
-
-        if (toggle.isOn) // If the toggle is checked
+        foreach (var toggle in checkToggles) // Use the actual list
         {
-            selectedChecks[checkName] = true;
-            totalDays += days;
-        }
-    }
+            if (toggle == null) continue; // Prevent null errors
 
-    return totalDays;
-}
+            Debug.Log($"{toggle.name} isOn BEFORE: {toggle.isOn}");
 
+            if (toggle.isOn)
+            {
+                selectedChecks[toggle.name] = true;
+                totalDays++;
+            }
 
-  public void RetrieveMixture()
-    {
-        if (daysLeftToCompletion > 0)
-        {
-            Debug.Log("Mixture is still being processed! " + daysLeftToCompletion + " days left.");
-            return;
+            Debug.Log($"{toggle.name} isOn AFTER: {toggle.isOn}");
         }
 
-        if (mixturePrefab != null)
-        {
-            mixturePrefab.SetActive(true); // Show potion again
-            Debug.Log("Retrieved potion after testing: " + string.Join(", ", selectedChecks.Keys));
-        }
+        return totalDays;
     }
 
     public Dictionary<string, bool> GetSelectedChecks()

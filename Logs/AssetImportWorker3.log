@@ -22,7 +22,7 @@ AssetImportWorker3
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-59031
+61557
 Successfully changed project path to: /Users/miggy/Documents/Github/LowerOrderin3D
 /Users/miggy/Documents/Github/LowerOrderin3D
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -58,12 +58,12 @@ Successfully changed project path to: /Users/miggy/Documents/Github/LowerOrderin
     "memorysetup-temp-allocator-size-gfx=262144"
 Player connection [8594016320]  Target information:
 
-Player connection [8594016320]  * "[IP] 192.168.1.236 [Port] 0 [Flags] 2 [Guid] 1199125267 [EditorId] 1199125267 [Version] 1048832 [Id] OSXEditor(0,Miguels-MacBook-Pro.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+Player connection [8594016320]  * "[IP] 192.168.87.21 [Port] 0 [Flags] 2 [Guid] 1601427631 [EditorId] 1601427631 [Version] 1048832 [Id] OSXEditor(0,mac.lan) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
 
 Player connection [8594016320] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [8594016320] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-Refreshing native plugins compatible for Editor in 13.41 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 9.91 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.48f1 (8bf49c377ebf)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2022.3.48f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -78,47 +78,47 @@ Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2022.3.48f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2022.3.48f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/2022.3.48f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56186
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56732
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/2022.3.48f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/2022.3.48f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.004318 seconds.
-- Loaded All Assemblies, in  0.184 seconds
+Registered in 0.005367 seconds.
+- Loaded All Assemblies, in  0.186 seconds
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 57 ms
+Android Extension - Scanning For ADB Devices 69 ms
 Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.214 seconds
-Domain Reload Profiling: 398ms
-	BeginReloadAssembly (61ms)
+Domain Reload Profiling: 400ms
+	BeginReloadAssembly (58ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (0ms)
 	RebuildCommonClasses (17ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (27ms)
-	LoadAllAssembliesAndSetupDomain (73ms)
-		LoadAssemblies (61ms)
+	RebuildNativeTypeToScriptingClass (5ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (78ms)
+		LoadAssemblies (59ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (72ms)
-			TypeCache.Refresh (72ms)
-				TypeCache.ScanAssembly (65ms)
+		AnalyzeDomain (76ms)
+			TypeCache.Refresh (75ms)
+				TypeCache.ScanAssembly (67ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
 	FinalizeReload (214ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (190ms)
+		SetupLoadedEditorAssemblies (191ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (117ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (123ms)
+			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (1ms)
-			ProcessInitializeOnLoadAttributes (50ms)
-			ProcessInitializeOnLoadMethodAttributes (19ms)
+			ProcessInitializeOnLoadAttributes (48ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -127,39 +127,39 @@ Domain Reload Profiling: 398ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.362 seconds
+- Loaded All Assemblies, in  0.314 seconds
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.312 seconds
-Domain Reload Profiling: 675ms
-	BeginReloadAssembly (64ms)
+- Finished resetting the current domain, in  0.273 seconds
+Domain Reload Profiling: 588ms
+	BeginReloadAssembly (60ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
+		DisableScriptedObjects (2ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (15ms)
-	RebuildCommonClasses (17ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (19ms)
-	LoadAllAssembliesAndSetupDomain (257ms)
-		LoadAssemblies (188ms)
+		CreateAndSetChildDomain (13ms)
+	RebuildCommonClasses (16ms)
+	RebuildNativeTypeToScriptingClass (5ms)
+	initialDomainReloadingComplete (16ms)
+	LoadAllAssembliesAndSetupDomain (216ms)
+		LoadAssemblies (154ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (97ms)
-			TypeCache.Refresh (86ms)
-				TypeCache.ScanAssembly (75ms)
+		AnalyzeDomain (91ms)
+			TypeCache.Refresh (81ms)
+				TypeCache.ScanAssembly (69ms)
 			ScanForSourceGeneratedMonoScriptInfo (6ms)
 			ResolveRequiredComponents (3ms)
-	FinalizeReload (312ms)
+	FinalizeReload (273ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (211ms)
+		SetupLoadedEditorAssemblies (191ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
+			InitializePlatformSupportModulesInManaged (6ms)
 			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (27ms)
-			ProcessInitializeOnLoadAttributes (167ms)
+			BeforeProcessingInitializeOnLoad (22ms)
+			ProcessInitializeOnLoadAttributes (153ms)
 			ProcessInitializeOnLoadMethodAttributes (8ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
@@ -167,12 +167,12 @@ Domain Reload Profiling: 675ms
 		AwakeInstancesAfterBackupRestoration (2ms)
 Launching external process: /Applications/Unity/Hub/Editor/2022.3.48f1/Unity.app/Contents/Tools/UnityShaderCompiler
 Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
-Refreshing native plugins compatible for Editor in 0.57 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3255 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 19 unused Assets / (48.6 KB). Loaded Objects now: 3738.
-Memory consumption went from 138.3 MB to 138.2 MB.
-Total: 2.006250 ms (FindLiveObjects: 0.104041 ms CreateObjectMapping: 0.028167 ms MarkObjects: 1.817083 ms  DeleteObjects: 0.056542 ms)
+Unloading 3256 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (48.5 KB). Loaded Objects now: 3739.
+Memory consumption went from 138.0 MB to 137.9 MB.
+Total: 1.878333 ms (FindLiveObjects: 0.091041 ms CreateObjectMapping: 0.028375 ms MarkObjects: 1.705042 ms  DeleteObjects: 0.053583 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -188,361 +188,113 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 82730.996392 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Models/pillar.fbx
-  artifactKey: Guid(257a5a8162fa1ee4e8e82ac61c20f35b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Models/pillar.fbx using Guid(257a5a8162fa1ee4e8e82ac61c20f35b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '72a3cce023a767ecf4c1c1603cca8bfd') in 0.340757 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+Thread 0x33c173000 may have been prematurely finalized
+- Loaded All Assemblies, in  0.199 seconds
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.576 seconds
+Domain Reload Profiling: 775ms
+	BeginReloadAssembly (65ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (10ms)
+	LoadAllAssembliesAndSetupDomain (102ms)
+		LoadAssemblies (115ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (9ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (576ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (203ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (26ms)
+			ProcessInitializeOnLoadAttributes (158ms)
+			ProcessInitializeOnLoadMethodAttributes (10ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (2ms)
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3234 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (28.5 KB). Loaded Objects now: 3742.
+Memory consumption went from 138.5 MB to 138.5 MB.
+Total: 2.053500 ms (FindLiveObjects: 0.105833 ms CreateObjectMapping: 0.029834 ms MarkObjects: 1.889584 ms  DeleteObjects: 0.027916 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: 3918e3fc78b5a79bad01e8451be0beb8 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Models/table drawer.fbx
-  artifactKey: Guid(4a07e68799a02b34db842834acf558ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Models/table drawer.fbx using Guid(4a07e68799a02b34db842834acf558ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
+  Time since last request: 103062.686066 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Fonts/Oswald-Bold.ttf
+  artifactKey: Guid(c9f6d0e7bc8541498c9a4799ba184ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Fonts/Oswald-Bold.ttf using Guid(c9f6d0e7bc8541498c9a4799ba184ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '9f67c656b43ddf9dce00569577f68a93') in 0.005535 seconds
+ -> (artifact id: 'c35da5eb8f9cdca8d139f1be53933c9c') in 0.094897 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Models/glass_funnel.fbx
-  artifactKey: Guid(98b82dfb9bbe8a04ca7f7f1980e08f8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Models/glass_funnel.fbx using Guid(98b82dfb9bbe8a04ca7f7f1980e08f8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'c406fad4f8816d0af31e928dc7558a85') in 0.023443 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000082 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Models/Box02.fbx
-  artifactKey: Guid(da8d6c6ca953aa24a924db0a93d368ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Models/Box02.fbx using Guid(da8d6c6ca953aa24a924db0a93d368ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'efc57d6331609334ba06ae14d0174470') in 0.016459 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Models/shelf_querst 1.fbx
-  artifactKey: Guid(26ee3dd88ed122244aaf5c0c3cbcbc7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Models/shelf_querst 1.fbx using Guid(26ee3dd88ed122244aaf5c0c3cbcbc7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '43d076d2e5af18b6594f29d9860bb7e1') in 0.007050 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Models/crucible_and_cover.fbx
-  artifactKey: Guid(ddd4e0df3ec62434ebc8a1ed9d649589) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Models/crucible_and_cover.fbx using Guid(ddd4e0df3ec62434ebc8a1ed9d649589) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'f8c7ba8c8a4b94253ec0622f36b5d360') in 0.016387 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 23
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Models/Erlenmeyer_flask.fbx
-  artifactKey: Guid(2d6b31bbb0cc4d74f9eb0dcbe73380be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Models/Erlenmeyer_flask.fbx using Guid(2d6b31bbb0cc4d74f9eb0dcbe73380be) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '1b6b5cb0a490df64bb0c92950ab6e0d1') in 0.006429 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000098 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Models/shelf showcase 1.fbx
-  artifactKey: Guid(19cebbe4a89244b42992150bce37a6d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Models/shelf showcase 1.fbx using Guid(19cebbe4a89244b42992150bce37a6d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'f900080a0a8d3ad7f67300d791cba53e') in 0.007058 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000063 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Models/floor.fbx
-  artifactKey: Guid(01814d9d4eef435478a4d6300d1b32aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Models/floor.fbx using Guid(01814d9d4eef435478a4d6300d1b32aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'b9cbe2a584c245d3c81cf22554cbe342') in 0.005518 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Models/stand glass.fbx
-  artifactKey: Guid(c46ea31fd4e9353429ec414ebc1dbceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Models/stand glass.fbx using Guid(c46ea31fd4e9353429ec414ebc1dbceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '3d3431db098f187fe007685782378d99') in 0.005873 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000073 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Models/showcase.fbx
-  artifactKey: Guid(e03cbcdcee58c8e4ab6df222b32f4812) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Models/showcase.fbx using Guid(e03cbcdcee58c8e4ab6df222b32f4812) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '8db4fa42859a8988eb43cab145bc16ac') in 0.049443 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 81
-========================================================================
-Received Import Request.
-  Time since last request: 67.518655 seconds.
-  path: Assets/Plugins/SimpleInput/Sprites/TransparentDark/Arrows/transparentDark24.png
-  artifactKey: Guid(f57649fe1a2603a479aa18b473201768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/SimpleInput/Sprites/TransparentDark/Arrows/transparentDark24.png using Guid(f57649fe1a2603a479aa18b473201768) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '6f88cfb2da2b0c083fd464f0dc84d6ec') in 0.024340 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 29.785566 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/Beaker.prefab
-  artifactKey: Guid(1836ec5a4a9706d42b8941d84940196f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/Beaker.prefab using Guid(1836ec5a4a9706d42b8941d84940196f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'b5d02549a19189ce7a3a809be3b4e6e8') in 0.014399 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/china dish.prefab
-  artifactKey: Guid(255b4818040390b40b67510d8b7d9c52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/china dish.prefab using Guid(255b4818040390b40b67510d8b7d9c52) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'c8e2a2e507fc0e133340519ef44e3917') in 0.005238 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/Boiling_Liquid_Stand (4).prefab
-  artifactKey: Guid(1597cff40c555460ca9001457c816aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/Boiling_Liquid_Stand (4).prefab using Guid(1597cff40c555460ca9001457c816aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'fc333f8ca89339d1df22502851058bcc') in 0.006025 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 70
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/Box.prefab
-  artifactKey: Guid(39cc7f30cb7643c4788fafb36317e6f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/Box.prefab using Guid(39cc7f30cb7643c4788fafb36317e6f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '252b6c85f1b0db38a4769dfa6157fc8e') in 0.006530 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 24
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/drawer handle (21) 1.prefab
-  artifactKey: Guid(e79e29316f62b4c998686f89304bf17e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/drawer handle (21) 1.prefab using Guid(e79e29316f62b4c998686f89304bf17e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '6d5d0a6457b58cba8088a483a60dbc99') in 0.005084 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
+Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
   Time since last request: 0.000029 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/chair (12).prefab
-  artifactKey: Guid(e2031ab4ea3884b9e9c3eef3aa3dff4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/chair (12).prefab using Guid(e2031ab4ea3884b9e9c3eef3aa3dff4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
+  path: Assets/TextMesh Pro/Examples & Extras/Fonts/Roboto-Bold.ttf
+  artifactKey: Guid(4beb055f07aaff244873dec698d0363e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Fonts/Roboto-Bold.ttf using Guid(4beb055f07aaff244873dec698d0363e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '1eef8147f8715425630be504a931a8df') in 0.003786 seconds
+[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
+ -> (artifact id: 'b8952c1357b8007d4ca211798781df9b') in 0.004396 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 67
+Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/floor.prefab
-  artifactKey: Guid(5d77a75c98992b840b27e02e065df54f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/floor.prefab using Guid(5d77a75c98992b840b27e02e065df54f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
+  Time since last request: 0.000064 seconds.
+  path: Assets/FreeButtonSet/Fonts/Poppins-MediumItalic.ttf
+  artifactKey: Guid(d1fe0bc1ac9782f4c8f875e1a7cea6d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FreeButtonSet/Fonts/Poppins-MediumItalic.ttf using Guid(d1fe0bc1ac9782f4c8f875e1a7cea6d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '4b9fede38a97379597e0c381f9bbecbb') in 0.005267 seconds
+[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
+ -> (artifact id: '80122ac98af4aff0b9a4dd28c5fed4cf') in 0.003812 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
+Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/florence_flask with water (6).prefab
-  artifactKey: Guid(76b99d376d6cd47aeb542373eef9d448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/florence_flask with water (6).prefab using Guid(76b99d376d6cd47aeb542373eef9d448) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
+  Time since last request: 0.000044 seconds.
+  path: Assets/FreeButtonSet/Fonts/Poppins-Bold.ttf
+  artifactKey: Guid(f4c99a340a6e6504aa6e992b7a253612) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FreeButtonSet/Fonts/Poppins-Bold.ttf using Guid(f4c99a340a6e6504aa6e992b7a253612) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'ced6f3dd46d5424802be0cc9b924a332') in 0.004124 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 25
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/drawer handle (19).prefab
-  artifactKey: Guid(d3f5f4c89484543558ea6c454ac54b9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/drawer handle (19).prefab using Guid(d3f5f4c89484543558ea6c454ac54b9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '0da2ce4f4b7a36fe41538693b1f64beb') in 0.004547 seconds
+ -> (artifact id: '0c557000c5c7a5480c12e45892896fdc') in 0.004863 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/Erlenmeyer_flask.prefab
-  artifactKey: Guid(e833bb11c8758f44a98ec0e99fba76d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/Erlenmeyer_flask.prefab using Guid(e833bb11c8758f44a98ec0e99fba76d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'f12e1ff0dac7f13aaae2d39ed5d89a01') in 0.005691 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/Beaker water (9).prefab
-  artifactKey: Guid(735daeab529434453a902dc7bc2545e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/Beaker water (9).prefab using Guid(735daeab529434453a902dc7bc2545e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'c50425e1d89dace15200b29b59d29d3d') in 0.020032 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 25
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/florence_flask with water.prefab
-  artifactKey: Guid(61c67c3c4a5f20f4b9b0d61fea197d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/florence_flask with water.prefab using Guid(61c67c3c4a5f20f4b9b0d61fea197d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '971d0638a9a66999900c91ee089041d2') in 0.004354 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 25
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/chair.prefab
-  artifactKey: Guid(00f2ce65178270a459700e0c08c55a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/chair.prefab using Guid(00f2ce65178270a459700e0c08c55a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '9dd8356fcefb6adec0cd3eb0380073a1') in 0.004435 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 67
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/Beaker water (9) Variant.prefab
-  artifactKey: Guid(14c6e23d670e54fd7a8fbc93f1498dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/Beaker water (9) Variant.prefab using Guid(14c6e23d670e54fd7a8fbc93f1498dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'a3f84881e3479bb21cb948e945e58c58') in 0.004263 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 39
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/Erlenmeyer_flask with water.prefab
-  artifactKey: Guid(82efbd6f209a6ab4c8e561fcd37a4810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/Erlenmeyer_flask with water.prefab using Guid(82efbd6f209a6ab4c8e561fcd37a4810) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '8450514bbdf8e98f6823635cc2902193') in 0.004737 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 25
-========================================================================
-Received Import Request.
-  Time since last request: 0.000051 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/drawer handle (21).prefab
-  artifactKey: Guid(62b87dc7804f2433f8a3b17ec80d2acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/drawer handle (21).prefab using Guid(62b87dc7804f2433f8a3b17ec80d2acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'b7c618fae652fc47af430dd7f75cb948') in 0.004327 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 0.000080 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/drawer handle.prefab
-  artifactKey: Guid(94158784aed10c64fba4aa087970b60a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/drawer handle.prefab using Guid(94158784aed10c64fba4aa087970b60a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '48297410285fc406c8d907f4a3d9e891') in 0.003422 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/drawer handle (20) 1.prefab
-  artifactKey: Guid(615bf1144b4a34719812bb7b0e688c88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/drawer handle (20) 1.prefab using Guid(615bf1144b4a34719812bb7b0e688c88) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: '697eff2c1271c8c3b588181fa8b57ccd') in 0.003387 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 19
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/3D Laboratory Environment with Appratus/Prefabs/Boiling_Liquid_Stand.prefab
-  artifactKey: Guid(5a995f9fd8fafcf479304ec16ce9c299) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/3D Laboratory Environment with Appratus/Prefabs/Boiling_Liquid_Stand.prefab using Guid(5a995f9fd8fafcf479304ec16ce9c299) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 14 workers.
- -> (artifact id: 'ffb23f603fbca6d46b19d9a8c2bf99d7') in 0.004519 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 70
+Number of asset objects unloaded after import = 4
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 89, details: Operation aborted.
 AssetImportWorker is now disconnected from the server

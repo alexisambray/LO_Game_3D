@@ -35,112 +35,112 @@ public class ShelfManager : MonoBehaviour
 
     private Dictionary<int, GameObject> correctPositions = new Dictionary<int, GameObject>();
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    // private void Awake()
+    // {
+    //     if (Instance == null)
+    //     {
+    //         Instance = this;
+    //     }
+    //     else
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
 
-    private void InitializeCorrectPositions()
-    {
-        // Define the correct placements for each slot
-        correctPositions[0] = TS_FB;
-        correctPositions[1] = TS_Med;
-        correctPositions[2] = TS_C;
-        correctPositions[3] = TS_HC;
-        correctPositions[4] = TS_PH;
-        correctPositions[5] = TS_A;
+    // private void InitializeCorrectPositions()
+    // {
+    //     // Define the correct placements for each slot
+    //     correctPositions[0] = TS_FB;
+    //     correctPositions[1] = TS_Med;
+    //     correctPositions[2] = TS_C;
+    //     correctPositions[3] = TS_HC;
+    //     correctPositions[4] = TS_PH;
+    //     correctPositions[5] = TS_A;
 
-        correctPositions[6] = S_FB;
-        correctPositions[7] = S_Med;
-        correctPositions[8] = S_C;
-        correctPositions[9] = S_HC;
-        correctPositions[10] = S_PH;
-        correctPositions[11] = S_A;
+    //     correctPositions[6] = S_FB;
+    //     correctPositions[7] = S_Med;
+    //     correctPositions[8] = S_C;
+    //     correctPositions[9] = S_HC;
+    //     correctPositions[10] = S_PH;
+    //     correctPositions[11] = S_A;
 
-        correctPositions[12] = C_FB;
-        correctPositions[13] = C_Med;
-        correctPositions[14] = C_C;
-        correctPositions[15] = C_HC;
-        correctPositions[16] = C_PH;
-        correctPositions[17] = C_A;
-    }
+    //     correctPositions[12] = C_FB;
+    //     correctPositions[13] = C_Med;
+    //     correctPositions[14] = C_C;
+    //     correctPositions[15] = C_HC;
+    //     correctPositions[16] = C_PH;
+    //     correctPositions[17] = C_A;
+    // }
 
-    public bool PlaceMixture(int slotIndex, GameObject mixture)
-    {
-        if (shelfSlots.ContainsKey(slotIndex))
-        {
-            Debug.Log("Slot already occupied!");
-            return false;
-        }
+    // public bool PlaceMixture(int slotIndex, GameObject mixture)
+    // {
+    //     if (shelfSlots.ContainsKey(slotIndex))
+    //     {
+    //         Debug.Log("Slot already occupied!");
+    //         return false;
+    //     }
 
-        shelfSlots[slotIndex] = mixture;
-        placedCount++;
+    //     shelfSlots[slotIndex] = mixture;
+    //     placedCount++;
 
-        if (placedCount == totalShelves)
-        {
-            CheckMixtures();
-        }
+    //     if (placedCount == totalShelves)
+    //     {
+    //         CheckMixtures();
+    //     }
 
-        return true;
-    }
+    //     return true;
+    // }
 
-    public void RemoveMixture(int slotIndex)
-    {
-        if (shelfSlots.ContainsKey(slotIndex))
-        {
-            shelfSlots.Remove(slotIndex);
-            placedCount--;
-        }
-    }
+    // public void RemoveMixture(int slotIndex)
+    // {
+    //     if (shelfSlots.ContainsKey(slotIndex))
+    //     {
+    //         shelfSlots.Remove(slotIndex);
+    //         placedCount--;
+    //     }
+    // }
 
-    private void CheckMixtures()
-    {
-        List<int> incorrectSlots = new List<int>();
+    // private void CheckMixtures()
+    // {
+    //     List<int> incorrectSlots = new List<int>();
 
-        foreach (var slot in shelfSlots)
-        {
-            int slotIndex = slot.Key;
-            GameObject mixture = slot.Value;
+    //     foreach (var slot in shelfSlots)
+    //     {
+    //         int slotIndex = slot.Key;
+    //         GameObject mixture = slot.Value;
 
-            if (!IsCorrectPlacement(slotIndex, mixture))
-            {
-                incorrectSlots.Add(slotIndex);
-            }
-            else
-            {
-                // Correctly placed mixtures cannot be moved
-                Rigidbody rb = mixture.GetComponent<Rigidbody>();
-                if (rb != null) rb.isKinematic = true;
-            }
-        }
+    //         if (!IsCorrectPlacement(slotIndex, mixture))
+    //         {
+    //             incorrectSlots.Add(slotIndex);
+    //         }
+    //         else
+    //         {
+    //             // Correctly placed mixtures cannot be moved
+    //             Rigidbody rb = mixture.GetComponent<Rigidbody>();
+    //             if (rb != null) rb.isKinematic = true;
+    //         }
+    //     }
 
-        // Remove incorrect mixtures
-        foreach (int slotIndex in incorrectSlots)
-        {
-            GameObject mixture = shelfSlots[slotIndex];
-            Rigidbody rb = mixture.GetComponent<Rigidbody>();
+    //     // Remove incorrect mixtures
+    //     foreach (int slotIndex in incorrectSlots)
+    //     {
+    //         GameObject mixture = shelfSlots[slotIndex];
+    //         Rigidbody rb = mixture.GetComponent<Rigidbody>();
 
-            if (rb != null)
-            {
-                rb.isKinematic = false;
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-            }
+    //         if (rb != null)
+    //         {
+    //             rb.isKinematic = false;
+    //             rb.velocity = Vector3.zero;
+    //             rb.angularVelocity = Vector3.zero;
+    //         }
 
-            RemoveMixture(slotIndex);
-        }
-    }
+    //         RemoveMixture(slotIndex);
+    //     }
+    // }
 
-    private bool IsCorrectPlacement(int slotIndex, GameObject mixture)
-    {
-        return correctPositions.ContainsKey(slotIndex) && shelfSlots[slotIndex] == correctPositions[slotIndex];
-    }
+    // private bool IsCorrectPlacement(int slotIndex, GameObject mixture)
+    // {
+    //     return correctPositions.ContainsKey(slotIndex) && shelfSlots[slotIndex] == correctPositions[slotIndex];
+    // }
 
 }
